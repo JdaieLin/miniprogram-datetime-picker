@@ -5,27 +5,22 @@ const app = getApp()
 
 Page({
   data: {
-    dateData: {
-      show: false
-    }
+    yearRange: [2018, new Date().getFullYear() + 1],
+    date: new Date().getTime(),
+    showPicker: false
   },
   onLoad: function () {
     
   },
   showDateSelector (e) {
     this.setData({
-      dateData: {
-        date: new Date(),
-        title: "title",
-        show: true
-      }
+      showPicker: true
     })
   },
-  hideDateSelector () {
-    this.setData({
-      dateData: {
-        show: false
-      }
-    })
+  hideDateSelector (e) {
+    
+  },
+  onConfirmDate (e) {
+    console.log(e.detail)
   }
 })

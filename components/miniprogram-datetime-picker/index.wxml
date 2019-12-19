@@ -6,7 +6,7 @@
   <view class="picker">
     <view class="picker-title">
       <label class="cancel" bindtap="cancel">取消</label>
-      <text>{{dateData.title}}</text>
+      <text>{{title}}</text>
       <label class="confirm" bindtap="confirm">确定</label>
     </view>
 

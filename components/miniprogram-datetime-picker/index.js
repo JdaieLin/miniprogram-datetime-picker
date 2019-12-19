@@ -9,7 +9,7 @@ const minutes = []
 var thisMon = date.getMonth();
 var thisDay = date.getDate();
 // 获取年
-for (let i = 2017; i <= date.getFullYear() + 2; i++) {
+for (let i = 1970; i <= date.getFullYear() + 5; i++) {
   years.push(i)
 }
 // 获取月份
@@ -69,10 +69,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    dateData: {
-      type: Object,
+    show: Boolean,
+    title: String,
+    date: {
+      type: Number,
       observer (val) {
-        console.log(val)
+        this.updatePicker()
+      }
+    },
+    yearRange: {
+      type: Array,
+      observer (val) {
         this.updatePicker()
       }
     }
@@ -93,7 +100,6 @@ Component({
     hour: "00",
     minutes: minutes,
     minute: "00",
-    show: false,
     firstColumnWidth: (wx.getSystemInfoSync().windowWidth - 248.5) / 2 + 53.5
   },
 
@@ -125,18 +131,22 @@ Component({
         day: day - 1,
         hour: hour,
         minute: min,
-        value: [years.indexOf(year), mon, day - 1, hour, min]
+        value: [years.indexOf(year), mon, day - 1, hour, 0, min]
       })
     },
     updatePicker () {
-      const dateData = this.data.dateData
-      let props = {
-        show: dateData.show
+      if (this.data.yearRange) {
+        years.length = 0
+        for (let i = this.data.yearRange[0]; i <= this.data.yearRange[1]; i++) {
+          years.push(i)
+        }
       }
-      if (dateData.date) {
-        this.updateDate(dateData.date)
+      this.setData({
+        years: years
+      })
+      if (this.data.date) {
+        this.updateDate(this.data.date)
       }
-      this.setData(props)
     },
     // 获取新的日期和时间
     bindChange: function (e) {
@@ -156,11 +166,17 @@ Component({
       })
     },
     cancel () {
+      this.setData({
+        show: false
+      })
       this.triggerEvent('cancel')
     },
     confirm () {
       const pageData = this.data
       const date = new Date(years[pageData.year], pageData.month, days[pageData.day], hours[pageData.hour], minutes[pageData.minute]).getTime()
+      this.setData({
+        show: false
+      })
       this.triggerEvent('confirm', date)
     },
     onSlotClick () {
