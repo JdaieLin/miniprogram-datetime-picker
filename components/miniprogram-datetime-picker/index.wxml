@@ -1,0 +1,40 @@
+<!--components/timePicker/index.wxml-->
+
+<slot bindtap="onSlotClick"></slot>
+
+<view class="picker-wrap {{show ? 'show' : ''}}">
+  <view class="picker">
+    <view class="picker-title">
+      <label class="cancel" bindtap="cancel">取消</label>
+      <text>{{dateData.title}}</text>
+      <label class="confirm" bindtap="confirm">确定</label>
+    </view>
+
+    <picker-view indicator-style="height: 40px;" style="width: 100%; height: 240px;" value="{{value}}"
+      bindchange="bindChange">
+      <picker-view-column class="picker-text" style="flex:0 0 {{firstColumnWidth}}px;">
+        <view wx:for="{{years}}" wx:key='{{index}}' style="line-height: 40px;text-align: right;"> {{item}}年</view>
+      </picker-view-column>
+
+      <picker-view-column class="picker-text" style="flex:0 0 55px;">
+        <view wx:for="{{months}}" wx:key='{{index}}' style="line-height: 40px;">{{item}}月</view>
+      </picker-view-column>
+
+      <picker-view-column class="picker-text" style="flex:0 0 70px;">
+        <view wx:for="{{days}}" wx:key='{{index}}' style="line-height: 40px;text-align: left;">{{item}}日</view>
+      </picker-view-column>
+
+      <picker-view-column class="picker-text" style="flex:0 0 20px;">
+        <view wx:for="{{hours}}" wx:key='{{index}}' style="line-height: 40px;">{{item}}</view>
+      </picker-view-column>
+
+      <picker-view-column class="picker-text" style="flex:0 0 30px;">
+        <view style="line-height: 40px;">:</view>
+      </picker-view-column>
+
+      <picker-view-column class="picker-text">
+        <view wx:for="{{minutes}}" wx:key='{{index}}' style="line-height: 40px;text-align: left;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

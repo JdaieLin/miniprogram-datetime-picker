@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <button bindtap="showDateSelector">Date</button>
+  <dateSelector dateData="{{dateData}}" bindcancel="hideDateSelector" bindconfirm="onConfirmDate">
+    <view>2019-10-12 10:23</view>
+  </dateSelector>
+</view>

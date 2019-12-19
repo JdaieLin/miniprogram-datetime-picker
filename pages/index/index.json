@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "dateSelector": "../components/miniprogram-datetime-picker"
+  }
+}
