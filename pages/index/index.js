@@ -18,9 +18,12 @@ Page({
     })
   },
   hideDateSelector (e) {
-    
+    console.log(e)
   },
   onConfirmDate (e) {
     console.log(e.detail)
+    this.setData({
+      date: e.detail
+    })
   }
 })

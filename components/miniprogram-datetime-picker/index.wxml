@@ -3,6 +3,7 @@
 <slot bindtap="onSlotClick"></slot>
 
 <view class="picker-wrap {{show ? 'show' : ''}}">
+  <view class="picker-bg" bindtap="cancel"></view>
   <view class="picker">
     <view class="picker-title">
       <label class="cancel" bindtap="cancel">取消</label>

@@ -1,7 +1,26 @@
 <!--index.wxml-->
+<wxs module="fliter">
+function dateFormat (timestamp) {
+  var date = getDate(timestamp)
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
+}
+function formatNumber (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+module.exports = {
+    dateFormat: dateFormat
+}
+</wxs>
 <view class="container">
   <button bindtap="showDateSelector">Date</button>
   <dateSelector show="{{showPicker}}" title="title" date="{{date}}" year-range="{{yearRange}}" bindcancel="hideDateSelector" bindconfirm="onConfirmDate">
-    <view>2019-10-12 10:23</view>
+    <view class="picker">{{fliter.dateFormat(date)}}</view>
   </dateSelector>
 </view>

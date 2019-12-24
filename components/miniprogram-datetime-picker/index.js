@@ -162,7 +162,7 @@ Component({
         month: val[1],
         day: val[2],
         hour: val[3],
-        minute: val[4]
+        minute: val[5]
       })
     },
     cancel () {
