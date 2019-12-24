@@ -14,27 +14,27 @@
     <picker-view indicator-style="height: 40px;" style="width: 100%; height: 240px;" value="{{value}}"
       bindchange="bindChange">
       <picker-view-column class="picker-text" style="flex:0 0 {{firstColumnWidth}}px;">
-        <view wx:for="{{years}}" wx:key='{{index}}' style="line-height: 40px;text-align: right;"> {{item}}年</view>
+        <view wx:for="{{years}}" wx:key='{{index}}' style="font-size: 16px;line-height: 40px;text-align: right;"> {{item}}年</view>
       </picker-view-column>
 
       <picker-view-column class="picker-text" style="flex:0 0 55px;">
-        <view wx:for="{{months}}" wx:key='{{index}}' style="line-height: 40px;">{{item}}月</view>
+        <view wx:for="{{months}}" wx:key='{{index}}' style="font-size: 16px;line-height: 40px;">{{item}}月</view>
       </picker-view-column>
 
       <picker-view-column class="picker-text" style="flex:0 0 70px;">
-        <view wx:for="{{days}}" wx:key='{{index}}' style="line-height: 40px;text-align: left;">{{item}}日</view>
+        <view wx:for="{{days}}" wx:key='{{index}}' style="font-size: 16px;line-height: 40px;text-align: left;">{{item}}日</view>
       </picker-view-column>
 
       <picker-view-column class="picker-text" style="flex:0 0 20px;">
-        <view wx:for="{{hours}}" wx:key='{{index}}' style="line-height: 40px;">{{item}}</view>
+        <view wx:for="{{hours}}" wx:key='{{index}}' style="font-size: 16px;line-height: 40px;">{{item}}</view>
       </picker-view-column>
 
       <picker-view-column class="picker-text" style="flex:0 0 30px;">
-        <view style="line-height: 40px;">:</view>
+        <view style="font-size: 16px;line-height: 40px;">:</view>
       </picker-view-column>
 
       <picker-view-column class="picker-text">
-        <view wx:for="{{minutes}}" wx:key='{{index}}' style="line-height: 40px;text-align: left;">{{item}}</view>
+        <view wx:for="{{minutes}}" wx:key='{{index}}' style="font-size: 16px;line-height: 40px;text-align: left;">{{item}}</view>
       </picker-view-column>
     </picker-view>
   </view>
