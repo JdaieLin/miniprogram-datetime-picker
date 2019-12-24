@@ -31,7 +31,13 @@ module.exports = {
 </wxs>
 <view class="container">
   <button bindtap="showDateSelector">Date</button>
-  <dateSelector show="{{showPicker}}" title="title" date="{{date}}" year-range="{{yearRange}}" bindcancel="hideDateSelector" bindconfirm="onConfirmDate">
+  <dateSelector 
+       show="{{showPicker}}" 
+       title="title" 
+       date="{{date}}" 
+       year-range="{{yearRange}}" 
+       bindcancel="hideDateSelector" 
+       bindconfirm="onConfirmDate">
     <view class="picker">{{fliter.dateFormat(date)}}</view>
   </dateSelector>
 </view>
