@@ -4,7 +4,7 @@
 
 ### Demo效果
 <p align="center">
-  <img width="320" src="https://pic.superbed.cn/item/5e04245576085c328947f389.gif">
+  <img width="320" src="https://pic3.superbed.cn/item/5e04252676085c3289481ddc.gif">
 </p>
 
 ### 引用方法
