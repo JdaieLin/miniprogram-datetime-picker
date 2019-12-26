@@ -1,5 +1,6 @@
 # miniprogram-datetime-picker
-小程序日期时间合并选择器组件
+
+小程序日期时间二合一选择器，使用最接近原生picker的显示方式，避免简单的picker-view-column平铺带来的违和感。
 
 ### Demo
 <p align="left">
