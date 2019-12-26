@@ -2,9 +2,9 @@
 
 小程序日期时间二合一选择器，使用最接近原生picker的显示方式，避免简单的picker-view-column平铺带来的违和感。
 
-### Demo
-<p align="left">
-  <img width="240" src="https://pic3.superbed.cn/item/5e01705676085c32893f703c.gif">
+### Demo效果
+<p align="center">
+  <img width="320" src="https://pic.superbed.cn/item/5e04245576085c328947f389.gif">
 </p>
 
 ### 引用方法
